@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Inicio from "./paginas/Inicio";
-import SobreMim from "./paginas/SobreMim";
+import Inicio from "./paginas/Inicio/Inicio";
+import SobreMim from "./paginas/SobreMim/SobreMim";
+import Menu from "./componentes/Menu/Menu";
+import Rodape from "./componentes/Rodape/Rodape";
 
 //window.location.pathname é uma forma nativa do javascript para saber a url
 //usado justamente para criar routas da aplicação
@@ -8,18 +10,22 @@ import SobreMim from "./paginas/SobreMim";
 
 // const pagina = window.location.pathname === '/' ? <Inicio/> : <SobreMim/>
 
-function App() {
+function AppRoutes() {
   
   return (
     // serve para criar rotas da aplicação
     <BrowserRouter>
+      <Menu />
+
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/sobremim" element={<SobreMim />} />
         <Route path="*" element={<h1>Página não encontrada 404</h1>} />
       </Routes>
+
+      <Rodape/>
     </BrowserRouter>
   )
 }
 
-export default App
+export default AppRoutes;
