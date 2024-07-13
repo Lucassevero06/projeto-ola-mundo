@@ -1,7 +1,7 @@
 import styles from './SobreMim.module.css'
 import PostModelo from "../../componentes/PostModelo/PostModelo"
 import fotoCapa from "../../assets/sobre_mim_capa.png";
-import fotoSobreMim from "../../assets/sobre_mim_foto.png";
+import fotoSobreMim from "../../assets/minha_foto.png";
 
 const SobreMim = () => {
   return (

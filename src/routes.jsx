@@ -5,6 +5,7 @@ import Menu from "./componentes/Menu/Menu";
 import Rodape from "./componentes/Rodape/Rodape";
 import PaginaPadrao from "./componentes/PaginaPadrao/PaginaPadrao";
 import Post from "./paginas/Post/Post";
+import NaoEncontrada from "./componentes/NaoEncontrada/NaoEncontrada";
 
 //window.location.pathname é uma forma nativa do javascript para saber a url
 //usado justamente para criar routas da aplicação
@@ -27,7 +28,7 @@ function AppRoutes() {
           <Route path="/posts/:id" element={<Post />} />
         </Route>
 
-        <Route path="*" element={<h1>Página não encontrada 404</h1>} />
+        <Route path="*" element={<NaoEncontrada/>} />
       </Routes>
 
       <Rodape/>
