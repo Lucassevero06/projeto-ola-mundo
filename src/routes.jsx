@@ -6,6 +6,7 @@ import Rodape from "./componentes/Rodape/Rodape";
 import PaginaPadrao from "./componentes/PaginaPadrao/PaginaPadrao";
 import Post from "./paginas/Post/Post";
 import NaoEncontrada from "./componentes/NaoEncontrada/NaoEncontrada";
+import ScrollToTop from "./componentes/ScrollToTop/ScrollToTop";
 
 //window.location.pathname é uma forma nativa do javascript para saber a url
 //usado justamente para criar routas da aplicação
@@ -18,17 +19,25 @@ function AppRoutes() {
   return (
     // serve para criar rotas da aplicação
     <BrowserRouter>
+
+      {/* Componente de ScrollToTop */}
+      <ScrollToTop/>
+
+      {/* Componente de menu */}
       <Menu />
 
       {/* Routes aninhadas */}
       <Routes>
+
         <Route path="/" element={<PaginaPadrao/>}>
           <Route path="/" element={<Inicio />} />
           <Route path="/sobremim" element={<SobreMim />} />
-          <Route path="/posts/:id" element={<Post />} />
         </Route>
 
+        <Route path="posts/:id/*" element={<Post />} />
+
         <Route path="*" element={<NaoEncontrada/>} />
+
       </Routes>
 
       <Rodape/>
